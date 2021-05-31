@@ -1,8 +1,11 @@
 $(document).ready(function() {
-    $('#btn1').click(function() {
-        $('#contactForm').attr('action',
-              'mailto:soroush.products@gmail.com?subject=' +
-              $('#msg_subject').val() + '&body=' + $('#message').val());
-        $('#contactForm').submit();
+    $('#submit').click(function() {
+    var yourMessage = 'FullName : ' + document.getElementById("name").value +
+    '\n Email : ' + document.getElementById("email").value +
+    '\n Message : ' + document.getElementById("message").value;
+    var subject = document.getElementById("msg_subject").value;
+    document.location.href = "mailto:soroush.products@gmail.com?subject="
+        + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(yourMessage);
     });
 });
